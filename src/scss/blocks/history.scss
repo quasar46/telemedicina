@@ -1,0 +1,22 @@
+.history {
+    .title {
+        margin-bottom: 50px;
+    }
+    .select {
+        display: flex;
+        span {
+            margin-right: 20px;
+        }
+        input {
+            margin-right: 20px;
+            border: none;
+        }
+    }
+}
+
+.history__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}

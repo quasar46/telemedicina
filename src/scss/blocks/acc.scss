@@ -1,0 +1,32 @@
+.accordion {
+    transition: 0.3s;
+    position: relative;
+    padding-right: 30px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url("../images/arrow-acc.svg");
+        transform: rotate(180deg);
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 12px;
+        margin-top: -6px;
+        right: 0;
+        top: 50%;
+        transition: all 0.1s;
+    }
+    &.active {
+        &::after {
+            background-image: url("../images/arrow-acc.svg");
+            transition: all 0.1s;
+            transform: rotate(0);
+        }
+    }
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}

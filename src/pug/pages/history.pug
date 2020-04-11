@@ -1,0 +1,232 @@
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title title here
+		link(rel="stylesheet", href="css/datepicker.min.css")
+		link(rel="stylesheet", href="css/main.min.css")
+	body
+		header.main-header
+				.main-header__logo
+					a(href="#")
+						<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect x="10" width="6" height="25" fill="white"/>
+							<rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+						</svg>
+						span Медицина
+				nav.main-nav
+					ul.main-nav__list
+						li
+							a(href="#") Анкета
+						li
+							a(href="#") Назначить лечение
+						li
+							a(href="#") Динамика показателей 
+						li
+							a(href="#") Печать
+					.main-nav__search
+						input(type="text" name="search" placeholder="Search for a mail")
+					.main-nav__avatar.avatar
+						.avatar__name
+							span.avatar__title Иванович М.С.
+							span.avatar__subtitle Врач-терапевт
+						.avatar__picture
+							img(src="", alt="")
+		main
+			aside.sidebar
+				.sidebar__nav
+					ul.sidebar__list
+						li
+							a(href="#") Пациенты
+						li
+							a(href="#") Больницы
+						li
+							a(href="#") Консультация
+						li
+							a(href="#") Календарь
+						li
+							a(href="#") Сообщение
+			.content-wrapper
+				.content-wrapper__top
+					ul
+						li
+							a(href="#").back-page Назад
+				.statement.acc
+					h2.title.accordion Выписка из электронного журнала ведения пациента
+					.statement__wrapper.panel
+						.statement__head
+							h3.subtitle Данные пациента
+							span.statement__edit Редактировать
+						.statement__content
+							.statement__info
+								.statement__info-block
+									p ФИО
+									p Иванова Татьяна Ивановна
+								.statement__info-block
+									p Возраст
+									p 32 года
+								.statement__info-block
+									p Адрес проживания
+									p Железногорск, Ленина, 24 – 56 
+								.statement__info-block
+									p Приклипление к женской консультации
+									p Женская консультация № 2 
+								.statement__info-block
+									p Телефон
+									p +7 920 345 54 56
+								.statement__info-block
+									ul
+										li
+											p Вес
+											p 56 кг
+										li
+											p Рост
+											p 167см
+										li
+											p ИМТ
+											p 12%
+							.statement__info
+								.statement__info-block
+									p Беременность  по счету
+									p 3 Беременность (1 выкидыш, 1 медаборт). 
+								.statement__info-block
+									p Расчетный срок беременности
+									p 24 недели
+								.statement__info-block
+									p Сопутсвующие патологии
+									p 
+										span Носитель тромбогенной мутации Лейден F5 в гетерозиготной форме
+										span Носитель тромбогенный полиморфизмов MTHFR, PAI-1в гомозиготной форме
+										span Хронический пиелонефрит. Варикозная болезнь
+								.statement__info-block
+									p Оценка риска ВТЭО во время беременности
+									p 1 балл
+				.statement.acc
+					h2.title.accordion Выписка из электронного журнала ведения пациента
+					.statement__wrapper.panel
+						.statement__head
+							h3.subtitle Данные пациента
+							span.statement__edit Редактировать
+						.statement__content
+							.statement__info
+								.statement__info-block
+									p ФИО
+									p Иванова Татьяна Ивановна
+								.statement__info-block
+									p Возраст
+									p 32 года
+							.statement__info
+								.statement__info-block
+									p Беременность  по счету
+									p 3 Беременность (1 выкидыш, 1 медаборт). 
+								.statement__info-block
+									p Расчетный срок беременности
+									p 24 недели
+
+				.history
+					h2.title Электронная история ведения беременности 
+					.history__head
+						.select
+							span Период
+							input(type="text").datepicker-here
+							input(type="text").datepicker-here
+						button.button.main-button Назначить лечение
+
+				.table-wrapper.table-history
+					table
+						thead
+							tr
+								th Дата
+								th Переданное значение 
+								th Назначение консультаций смежных специалистов 
+								th Лечение 
+								th Комментарий
+						tr
+							th 
+								span 20.02.2020
+							th 
+								.th-inner
+									span.mode Антитела к β2 гликопротеину 24 ЕД  
+								.th-inner
+									span.mode-2 D-димер 845 нг/мл
+								.th-inner
+									span УЗИ, степень зрелости плаценты 1ст. 
+								.th-inner
+									span.table__small-text Данные переданы <br> через личный <br> кабинет
+							th Для согласования лечения назначена консультация врача -гематолога 
+							th
+								.th-inner
+									span.table__min-title Принимать
+									span Ангиовит 1 таблетка в суткиКурантил 25 мг по 1 таблетки 3 раза в день. 
+								.th-inner
+									span.table__min-title Вводить подкожно
+									span Фраксипарин 0,3 один раз.
+								.th-inner
+									span.table__min-title Сдать анализы 
+									span D-димер через 2 недели 
+								.th-inner
+									span.table__small-text Рекомендации направлены <br> на согласование врачу гематологу
+								.th-inner
+									span.table__small-text Врач
+									span Иванов И. И.
+						tr
+							th
+								span.green 3.04.2020 
+							th 
+								.th-inner
+									span.mode Показатели коагулограммы  
+									span АПТВ – 26, ПТИ – 76%, Фибриноген – 3,4 
+								.th-inner
+									span.mode-2 D-димер 845 нг/мл 
+								.th-inner
+									span Фото ОАК 
+								a(href="#").button.table-button Открыть фото
+								.th-inner
+									span.table__small-text Данные внесены <br> врачом-консультантом 
+								.th-inner
+									span.table__small-text Врач
+									span Иванов И. И.
+							th 
+								.th-inner
+									span Выполнена консультация врача-гематолога
+								.th-inner
+									span.green-check Лечение согласовано
+								.th-inner
+									span.table__small-text Врач - гематолог
+									span Петров А. А.
+							th
+								.th-inner
+									span.table__min-title Принимать
+									span Ангиовит 1 таблетка в суткиКурантил 25 мг по 1 таблетки 3 раза в день. 
+								.th-inner
+									span.table__min-title Вводить подкожно
+									span Фраксипарин 0,3 один раз.
+								.th-inner
+									span.table__min-title Сдать анализы 
+									span D-димер через 2 недели 
+								.th-inner
+									span.table__small-text Рекомендации направлены <br> на согласование врачу гематологу
+								.th-inner
+									span.table__small-text Врач
+									span Иванов И. И.
+								.th-inner
+									span.table__small-text Рекомендации направлены в личный кабинет пациентки, дополнительно произведено информирование посредством SMS сообщения
+								.th-inner
+									span.table__small-text SMS – «Вам в личный кабинет отправлены новые рекомендации по лечению»
+							th
+								.th-inner
+									span С пациенткой произведен личный разговор по телефону. Каких-либо жалоб не предъявляет. 
+								.th-inner
+									span.table__small-text Врач
+									span Иванов И. И.
+			.popup#profile-popup
+				h2.title Анкета пациента
+				form(action="get")
+					p
+						span.label Больницы
+						input
+							
+		script(src="js/jquery-3.4.1.min.js")
+		script(src="js/datepicker.min.js")
+		script(src="js/main.js")

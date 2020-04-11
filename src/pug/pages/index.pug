@@ -1,0 +1,204 @@
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title title here
+		link(rel="stylesheet", href="css/main.min.css")
+		link(rel="stylesheet", href="css/datepicker.min.css")
+	body
+		header.main-header
+				.main-header__logo
+					a(href="#")
+						<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect x="10" width="6" height="25" fill="white"/>
+							<rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+						</svg>
+						span Медицина
+				nav.main-nav
+					ul.main-nav__list
+						li
+							a(href="#") Анкета
+						li
+							a(href="#") Отчеты
+						li
+							a(href="#") Сервис
+						li
+							a(href="#") Помощь
+					.main-nav__search
+						input(type="text" name="search" placeholder="Search for a mail")
+					.main-nav__avatar.avatar
+						.avatar__name
+							span.avatar__title Иванович М.С.
+							span.avatar__subtitle Врач-терапевт
+						.avatar__picture
+							img(src="", alt="")
+		main
+			aside.sidebar
+				.sidebar__nav
+					ul.sidebar__list
+						li
+							a(href="#") Пациенты
+						li
+							a(href="#") Больницы
+						li
+							a(href="#") Консультация
+						li
+							a(href="#") Календарь
+						li
+							a(href="#") Сообщение
+			.content-wrapper
+				.content-wrapper__top
+					ul.content-wrapper__nav
+						li
+							a(href="#").active Новые
+						li
+							a(href="#") Основные
+					.content-wrapper__select
+						select
+							option(value="value1") Больницы
+							option(value="value1") Больницы
+							option(value="value1") Больницы
+							option(value="value1") Больницы
+				.table-wrapper.table-pacients
+					table
+						thead
+							tr
+								th №
+								th ФИО
+								th Больницы
+								th.vertical Возраст
+								th.vertical Недель
+								th Диагноз
+								th Показатели
+						tr.zapredel
+							th 1
+							th.mode Иванов И.И.
+							th Курская городская больница №6
+							th 25
+							th 1
+							th Сахарный диабет
+							th Антитела к β2 гликопротеину
+						tr.nowork
+							th 2
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 21
+							th 8
+							th АД
+							th D-димер
+						tr
+							th 3
+							th.mode Иванова И. И.
+							th Курская городская больница №6
+							th 40
+							th 10
+							th АГ
+							th 
+						tr
+							th 4
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 20
+							th 5
+							th Эндокринопатия
+							th Антитела к β2 гликопротеину 
+						tr
+							th 5
+							th.mode Иванова И. И.
+							th Курская городская больница №6
+							th 18
+							th 7
+							th АД
+							th D-димер
+						tr
+							th 6
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 29
+							th 8
+							th АГ
+							th Антитела к β2 гликопротеину 
+						tr
+							th 7
+							th.mode Иванова И. И.
+							th Курская городская больница №6
+							th 29
+							th 8
+							th АГ
+							th D-димер
+						tr
+							th 8
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 29
+							th 8
+							th АД
+							th Антитела к β2 гликопротеину 
+						tr
+							th 1
+							th.mode Иванов И.И.
+							th Курская городская больница №6
+							th 25
+							th 1
+							th Сахарный диабет
+							th Антитела к β2 гликопротеину
+						tr
+							th 2
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 21
+							th 8
+							th АД
+							th D-димер
+						tr
+							th 3
+							th.mode Иванова И. И.
+							th Курская городская больница №6
+							th 40
+							th 10
+							th АГ
+							th 
+						tr
+							th 4
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 20
+							th 5
+							th Эндокринопатия
+							th Антитела к β2 гликопротеину 
+						tr
+							th 5
+							th.mode Иванова И. И.
+							th Курская городская больница №6
+							th 18
+							th 7
+							th АД
+							th D-димер
+						tr
+							th 6
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 29
+							th 8
+							th АГ
+							th Антитела к β2 гликопротеину 
+						tr
+							th 7
+							th.mode Иванова И. И.
+							th Курская городская больница №6
+							th 29
+							th 8
+							th АГ
+							th D-димер
+						tr
+							th 8
+							th.mode Петрова А. В.
+							th Курская городская больница №6
+							th 29
+							th 8
+							th АД
+							th Антитела к β2 гликопротеину /main.js")
+		script(src="js/jquery-3.4.1.min.js")
+		script(src="js/datepicker.min.js")
+		script(src="js/main.js")

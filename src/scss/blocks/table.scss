@@ -1,0 +1,156 @@
+.table-pacients,
+.table-history {
+    background-color: #fff;
+    box-shadow: 0px 5px 20px rgba(211, 223, 236, 0.42);
+    table {
+        border-collapse: collapse;
+        thead {
+            background-color: #ecf7ff;
+            tr {
+                th {
+                    padding: 60px 35px;
+                    font-weight: 400 !important;
+                    vertical-align: middle;
+                }
+            }
+        }
+        tr {
+            th {
+                position: relative;
+                font-weight: 500;
+                border: 1px solid #ededed;
+                padding: 25px 35px;
+                &:nth-child(1) {
+                    font-size: 14px;
+                }
+                &:nth-child(2) {
+                    font-weight: 700;
+                }
+                &.vertical {
+                    transform: rotate(-90deg);
+                }
+                &.mode {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background-image: url("../images/check-table.svg");
+                        background-repeat: no-repeat;
+                        width: 13px;
+                        height: 11px;
+                        left: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+        tr {
+            &.zapredel {
+                background-color: #ffd0d0;
+                th {
+                    &:nth-child(2) {
+                        &::after {
+                            content: "";
+                            background-image: none;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            top: 50%;
+                            left: 10px;
+                            transform: translateY(-50%);
+                            background-color: #e81717;
+                        }
+                    }
+                }
+            }
+            &.nowork {
+                background-color: rgba(2, 205, 59, 0.16);
+                th {
+                    &:nth-child(2) {
+                        &::after {
+                            content: "";
+                            background-image: none;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            top: 50%;
+                            left: 10px;
+                            transform: translateY(-50%);
+                            background-color: #02cd3b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.table-history {
+    thead {
+        tr {
+            th {
+                opacity: 0.6;
+                text-align: center;
+            }
+        }
+    }
+    tr {
+        th {
+            vertical-align: top;
+            text-align: left;
+            font-weight: 500;
+            &:first-child {
+                opacity: 0.6;
+            }
+            &:nth-child(2) {
+                width: 350px;
+            }
+            &:nth-child(4) {
+                width: 270px;
+            }
+            span {
+                &.mode {
+                    color: #047df6;
+                }
+                &.mode-2 {
+                    color: #3796f6;
+                }
+                display: block;
+                font-weight: 500;
+                &.table__small-text {
+                    font-size: 10px;
+                    opacity: 0.6;
+                }
+                &.table__min-title {
+                    opacity: 0.6;
+                }
+                &.green {
+                    color: #02cd3b;
+                }
+                &.green-check {
+                    color: #02cd3b;
+                    position: relative;
+                    padding-left: 20px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 11px;
+                        height: 8px;
+                        background-image: url("../images/green-check.svg");
+                        top: 5px;
+                        left: 0;
+                    }
+                }
+            }
+            .th-inner {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.table-wrapper {
+    @media (max-width: 600px) {
+        overflow-y: scroll;
+    }
+}
