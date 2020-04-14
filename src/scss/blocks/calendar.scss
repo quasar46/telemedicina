@@ -1,5 +1,39 @@
-.datepicker--cell.datepicker--cell-day.-other-month- {
-    &:hover {
-        background-color: #34AFF9 !important;
-    }
+.js-datepicker {
+    color: rgba(0, 0, 0, 0.87);
+    // background-image: url("../images/arrow-calendar.svg");
+    background-image: url("../images/calendar.svg");
+    // background-size: 11px 8px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 99% center;
+    cursor: pointer;
+    border: none;
+}
+
+.datepicker--day-name {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.datepicker--cell.-selected-,
+.datepicker--cell.-selected-.-current- {
+    background: #047df6;
+    border-radius: 50%;
+}
+
+.datepicker--cell.datepicker--cell-day.-focus- {
+    background-color: #34aff9;
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+.datepicker--cell.datepicker--cell-day:active {
+    background: #1962ad;
+}
+
+.datepicker--nav-title {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.datepicker--nav-title i {
+    color: rgba(0, 0, 0, 0.87);
 }

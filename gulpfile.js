@@ -137,7 +137,7 @@ gulp.task("server", function () {
     gulp.watch("src/pug/**/*.pug", gulp.series("pug", "refresh"));
     gulp.watch("src/js/*.js", gulp.series("js", "refresh"));
     gulp.watch("src/images/*.*", gulp.series("images", "refresh"));
-    gulp.watch("src/vendor/*.*", gulp.series("vendor", "refresh"));
+    gulp.watch("src/scss/vendor/*.*", gulp.series("vendor", "refresh"));
 });
 
 gulp.task("refresh", function (done) {

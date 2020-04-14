@@ -2,37 +2,38 @@ doctype html
 html(lang="ru-RU")
 	head
 		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 		title title here
-		link(rel="stylesheet", href="css/datepicker.min.css")
-		link(rel="stylesheet", href="css/main.min.css")
+		link(rel="stylesheet" href="css/datepicker.min.css")
+		link(rel="stylesheet" href="css/select2.min.css")
+		link(rel="stylesheet" href="css/main.min.css")
 	body
 		header.main-header
-				.main-header__logo
-					a(href="#")
-						<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<rect x="10" width="6" height="25" fill="white"/>
-							<rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
-						</svg>
-						span Медицина
-				nav.main-nav
-					ul.main-nav__list
-						li
-							a(href="#") Анкета
-						li
-							a(href="#") Назначить лечение
-						li
-							a(href="#") Динамика показателей 
-						li
-							a(href="#") Печать
-					.main-nav__search
-						input(type="text" name="search" placeholder="Search for a mail")
-					.main-nav__avatar.avatar
-						.avatar__name
-							span.avatar__title Иванович М.С.
-							span.avatar__subtitle Врач-терапевт
-						.avatar__picture
-							img(src="", alt="")
+			.main-header__logo
+				a(href="#")
+					<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="10" width="6" height="25" fill="white"/>
+						<rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+					</svg>
+					span Медицина
+			nav.main-nav
+				ul.main-nav__list
+					li
+						a(href="#") Анкета
+					li
+						a(href="#") Назначить лечение
+					li
+						a(href="#") Динамика показателей 
+					li
+						a(href="#") Печать
+				.main-nav__search
+					input(type="text" name="search" placeholder="Search for a mail")
+				.main-nav__avatar.avatar
+					.avatar__name
+						span.avatar__title Иванович М.С.
+						span.avatar__subtitle Врач-терапевт
+					.avatar__picture
+						img(src="" alt="")
 		main
 			aside.sidebar
 				.sidebar__nav
@@ -129,8 +130,8 @@ html(lang="ru-RU")
 					.history__head
 						.select
 							span Период
-							input(type="text").datepicker-here
-							input(type="text").datepicker-here
+							input(type="text" value="15.03.2020").js-datepicker
+							input(type="text" value="15.03.2020").js-datepicker
 						button.button.main-button Назначить лечение
 
 				.table-wrapper.table-history
@@ -220,13 +221,288 @@ html(lang="ru-RU")
 								.th-inner
 									span.table__small-text Врач
 									span Иванов И. И.
+			//- Анкета пациента
 			.popup#profile-popup
-				h2.title Анкета пациента
-				form(action="get")
-					p
-						span.label Больницы
-						input
-							
+				.popup__wrapper
+					h2.title Анкета пациента
+					.popup__inner
+						form(action="get")
+							p.popup__row
+								span.label Больницы
+								select(name="state").js-example-basic-single
+									option Выберите больницу
+									option Больница 1
+									option Больница 2
+									option Больница 3
+							p.popup__row
+								span.label Пациент
+								select.js-example-basic-single 
+									option Выберите пациента
+									option Пациент 1
+									option Пациент 2
+									option Пациент 3
+							p.popup__row.popup__row--mode
+								input(type="checkbox" value="Добавить нового")#add-new.style-check
+								label(for="add-new").style-check Добавить нового
+							p.popup__row
+								span.label ФИО
+								input(type="text" placeholder="Фамилия Имя Отчество" name="name")
+							.button.main-button Далее
+			
+			//- Общие данные
+			.popup#general-popup
+				.popup__wrapper
+					h2.title Общие данные
+					.popup__inner
+						form(action="get")
+							p.popup__row
+								span.label ФИО
+								input(type="text" placeholder="Фамилия Имя Отчество" name="name")
+							p.popup__row
+								span.label Дата рождения
+								input(type="text" value="13.05.1998").js-datepicker
+							p.popup__row
+								span.label Адрес проживания
+								input(type="text" value="Адрес проживания")
+							p.popup__row
+								span.label Прикрепение к женской консультации
+								select.js-example-basic-single
+									option Выберите консультацию
+									option Консультация 1
+									option Консультация 2
+									option Консультация 3
+							p.popup__row
+								span.label Телефон
+								input(type="text" value="телефон")
+							p.popup__row
+								span.label СНИЛС
+								input(type="text" value="Снилс")
+							p.popup__row
+								span.label Паспорт
+								input(type="text" value="паспорт")
+							p.popup__row
+								span.label Email
+								input(type="email" value="email")
+							p.popup__row
+								span.label Дата начала наблюдения
+								input(type="text" value="13.05.1998").js-datepicker
+							p.popup__row
+								span.label Комментарий
+								input(type="text" value="комментарий")
+							.button.main-button Далее
+
+			//-данные по беременности
+			.popup#gestation-popup
+				.popup__wrapper
+					h2.title Данные по беременности
+					.popup__inner
+						form(action="get")
+							p.popup__row
+								span.label Беременность по счету
+								input(type="text" placeholder="2" value="Беременность по счету")
+							p.popup__row
+								span.label Рсчетный срок беременности
+								input(type="text" value="13.05.2020").js-datepicker
+							p.popup__row
+								label(for="gestation-check-1").radio
+									input(type="radio" id="gestation-check-1" name="gestation-name-1" value="нормальные роды")
+									span.radio-text Нормальные роды
+								label(for="gestation-check-2").radio
+									input(type="radio" id="gestation-check-2" name="gestation-name-1" value="наличие выкидышей")
+									span.radio-text Наличие выкидышей
+							p.popup__row
+								span.label Количество
+								input(type="text" placeholder="2" value="Количество")
+							p.popup__row
+								span.label Сроки
+								input(type="text" value="13.05.2020").js-datepicker
+							p.popup__row
+								label(for="gestation-check-3").radio
+									input(type="radio" id="gestation-check-3" name="gestation-name-2" value="Наличие замерших")
+									span.radio-text Наличие замерших
+								label(for="gestation-check-4").radio
+									input(type="radio" id="gestation-check-4" name="gestation-name-2" value="Наличие мертворожденных")
+									span.radio-text Наличие мертворожденных
+								label(for="gestation-check-5").radio
+									input(type="radio" id="gestation-check-5" name="gestation-name-2" value="Тяжелая преэклампсия")
+									span.radio-text Тяжелая преэклампсия
+								label(for="gestation-check-6").radio
+									input(type="radio" id="gestation-check-6" name="gestation-name-2" value="HELLP-синдром")
+									span.radio-text HELLP-синдром
+								label(for="gestation-check-7").radio
+									input(type="radio" id="gestation-check-7" name="gestation-name-2" value="ВТЭО в анамнезе")
+									span.radio-text ВТЭО в анамнезе
+							p.popup__row
+								span.label Вес
+								input(type="text" placeholder="79" value="вес")
+							p.popup__row
+								span.label Вес
+								input(type="text" placeholder="169" value="вес")
+							p.popup__row
+								span.label ИМТ
+								input(type="text" placeholder="80%" value="вес")
+							.button.main-button Далее
+
+			//-данные по мутации
+			.popup#mutation-popup
+				.popup__wrapper
+					h2.title Полиморфизмы/мутации
+					.popup__inner
+						form(action="get")
+							p.popup__row
+								label(for="gestation-check-8").radio
+									input(type="checkbox" id="gestation-check-8" name="gestation-name-3" value="MTHFR 677 CT")
+									span.radio-text MTHFR 677 CT
+								label(for="gestation-check-9").radio
+									input(type="checkbox" id="gestation-check-9" name="gestation-name-3" value="MTHFR 677 ТT")
+									span.radio-text MTHFR 677 ТT
+								label(for="gestation-check-10").radio
+									input(type="checkbox" id="gestation-check-10" name="gestation-name-3" value="MTHFR 1298 АC")
+									span.radio-text MTHFR 1298 АC  
+								label(for="gestation-check-11").radio
+									input(type="checkbox" id="gestation-check-11" name="gestation-name-3" value="MTHFR 1298 СC")
+									span.radio-text MTHFR 1298 СC
+								label(for="gestation-check-12").radio
+									input(type="checkbox" id="gestation-check-12" name="gestation-name-3" value="MTRR 66 AG")
+									span.radio-text MTRR 66 AG
+								label(for="gestation-check-13").radio
+									input(type="checkbox" id="gestation-check-13" name="gestation-name-3" value="MTRR 66 GG")
+									span.radio-text MTRR 66 GG
+								label(for="gestation-check-14").radio
+									input(type="checkbox" id="gestation-check-14" name="gestation-name-3" value="PAI-1: -675 5G4G")
+									span.radio-text PAI-1: -675 5G4G
+								label(for="gestation-check-15").radio
+									input(type="checkbox" id="gestation-check-15" name="gestation-name-3" value="PAI-1: -675 4G4G")
+									span.radio-text PAI-1: -675 4G4G
+								label(for="gestation-check-16").radio
+									input(type="checkbox" id="gestation-check-16" name="gestation-name-3" value="F5: 1691 GA")
+									span.radio-text F5: 1691 GA
+								label(for="gestation-check-17").radio
+									input(type="checkbox" id="gestation-check-17" name="gestation-name-3" value="F5: 1691 АA")
+									span.radio-text F5: 1691 АA
+								label(for="gestation-check-18").radio
+									input(type="checkbox" id="gestation-check-18" name="gestation-name-3" value="F2: 20210 GA")
+									span.radio-text F2: 20210 GA
+								label(for="gestation-check-19").radio
+									input(type="checkbox" id="gestation-check-19" name="gestation-name-3" value="F2: 20210 АA")
+									span.radio-text F2: 20210 АA
+							.button.main-button Далее
+
+
+			//-Оценка риска ВТЭО
+			.popup#risk-popup
+				.popup__wrapper
+					h2.title Оценка риска ВТЭО
+					.popup__inner
+						form(action="get")
+							p.popup__row
+								label(for="gestation-check-20").radio
+									input(type="checkbox" id="gestation-check-20" name="gestation-name-4" value="текст1")
+									span.radio-text Длительный прием антикоагулянтов, используемый до беременности для постоянных показаний 
+								label(for="gestation-check-21").radio
+									input(type="checkbox" id="gestation-check-21" name="gestation-name-4" value="текст2")
+									span.radio-text Предшествующие рецидивирующие ВТЭО 
+								label(for="gestation-check-22").radio
+									input(type="checkbox" id="gestation-check-22" name="gestation-name-4" value="текст3")
+									span.radio-text Предшествующее ВТЭО в сочетании с тромбофилией высокого риска (дефицит антитромбина, АФС ), без лечения антикоагулянтами до беременности
+								label(for="gestation-check-23").radio
+									input(type="checkbox" id="gestation-check-23" name="gestation-name-4" value="текст4")
+									span.radio-text Предшествующие ВТЭО, ничем не спровоцированные или связанные с приемом эстрогенов или  беременностью
+								label(for="gestation-check-24").radio
+									input(type="checkbox" id="gestation-check-24" name="gestation-name-4" value="текст5")
+									span.radio-text Предшествующие спровоцированные ВТЭО в сочетании с тромбофилией низкого риска
+								label(for="gestation-check-25").radio
+									input(type="checkbox" id="gestation-check-25" name="gestation-name-4" value="текст6")
+									span.radio-text Бессимптомные тромбофилии омозиготы по фактору V Лейдена 
+								label(for="gestation-check-26").radio
+									input(type="checkbox" id="gestation-check-26" name="gestation-name-4" value="текст7")
+									span.radio-text Гомозиготы по протромбину G20210A 
+								label(for="gestation-check-27").radio
+									input(type="checkbox" id="gestation-check-27" name="gestation-name-4" value="текст8")
+									span.radio-text Дефицит антитромбина 
+								label(for="gestation-check-28").radio
+									input(type="checkbox" id="gestation-check-28" name="gestation-name-4" value="текст9")
+									span.radio-text Строгий постельный режим 7 и более дней у женщин с ИМТ >25 кг/м2 
+								label(for="gestation-check-29").radio
+									input(type="checkbox" id="gestation-check-29" name="gestation-name-4" value="текст10")
+									span.radio-text Неакушерское хирургическое вмешательство во время беременности 
+							p.popup__row
+								span.label--strong 
+									b Профилактические дозы НМГ в течение всей беременности и 6 нед. после родов 
+								input(type="text" placeholder="1")
+							p.popup__row
+								span.label--strong
+									b Профилактические дозы НМГ в течение всей беременности и 6 нед. после родов 
+								input(type="text" placeholder="≥2")
+							.button.main-button Далее
+
+			//- фотография
+			.popup#photo-popup
+				.popup__wrapper
+					.closed-popup
+					h2.title Фото ОАК
+					.popup__inner
+						.popup__picture-inner
+							img(src="images/item.png", alt="")
+
+			//- Выбор показателей 
+			.popup#selection-popup
+				.popup__wrapper
+					h2.title Выбор показателей
+					.popup__inner
+						p.selection__subtitle Выберите до 3-х показателей из списка
+						form(action="get")
+							p.popup__row
+								select(name="state").js-example-basic-single
+									option ОАМ
+									option ОАМ
+									option ОАМ
+							p.popup__row
+								select(name="state").js-example-basic-single
+									option ОАК
+									option ОАК
+									option ОАК
+							p.popup__row
+								label(for="gestation-check-30").radio
+									input(type="checkbox" id="gestation-check-30" name="gestation-name-5" value="Лейкоциты")
+									span.radio-text Лейкоциты 
+								label(for="gestation-check-31").radio
+									input(type="checkbox" id="gestation-check-31" name="gestation-name-5" value="Эритроциты")
+									span.radio-text Эритроциты
+								label(for="gestation-check-32").radio
+									input(type="checkbox" id="gestation-check-32" name="gestation-name-5" value="Гемоглобин")
+									span.radio-text Гемоглобин, г/л
+								label(for="gestation-check-33").radio
+									input(type="checkbox" id="gestation-check-33" name="gestation-name-5" value="Гематокрит")
+									span.radio-text Гематокрит, %
+								label(for="gestation-check-34").radio
+									input(type="checkbox" id="gestation-check-34" name="gestation-name-5" value="Тромбоциты")
+									span.radio-text Тромбоциты
+								label(for="gestation-check-35").radio
+									input(type="checkbox" id="gestation-check-35" name="gestation-name-5" value="Ретикулоциты")
+									span.radio-text Ретикулоциты,‰
+							p.popup__row--selects
+								select(name="state").js-example-basic-single
+									option Гемостаз
+									option Гемостаз
+									option Гемостаз
+								select(name="state").js-example-basic-single
+									option Инфекция
+									option Инфекция
+									option Инфекция
+								select(name="state").js-example-basic-single
+									option Гликемический профиль
+									option Гликемический профиль
+									option Гликемический профиль
+								select(name="state").js-example-basic-single
+									option Биохимия крови
+									option БИОХИМИЯ КРОВИ
+									option БИОХИМИЯ КРОВИ
+							.button(type="submit").main-button Готово
+
+
+
 		script(src="js/jquery-3.4.1.min.js")
 		script(src="js/datepicker.min.js")
+		script(src="js/select2.min.js")
 		script(src="js/main.js")
