@@ -161,5 +161,5 @@ gulp.task("clean", function () {
     return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "css", "images", "vendor", "pug", "js"));
+gulp.task("build", gulp.series("clean", "css", "vendor", "pug", "js"));
 gulp.task("start", gulp.series("build", "server"));
