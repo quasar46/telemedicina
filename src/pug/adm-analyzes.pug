@@ -1,0 +1,199 @@
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		title title here
+		link(rel="stylesheet" href="css/main.min.css")
+		link(rel="stylesheet" href="css/datepicker.min.css")
+	body
+		header.main-header.main-header--admin
+			.main-header__logo
+				a(href="#")
+					<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="10" width="6" height="25" fill="white"/>
+						<rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+					</svg>
+					span Медицина
+			nav.main-nav
+				ul.main-nav__list
+					li
+						a.active(href="#") Сдача анализов
+					li
+						a(href="#") Результаты анализов
+				.main-nav__search
+					input(type="text" name="search" placeholder="Search for a mail")
+				.main-nav__avatar.avatar
+					.avatar__name
+						span.avatar__title Иванович М.С.
+						span.avatar__subtitle Врач-терапевт
+					.avatar__picture
+						img(src="" alt="")
+		main
+			aside.sidebar.sidebar--admin
+				.sidebar__nav
+					ul.sidebar__list
+						li.sublist
+							a.active Пользователи
+							ul
+								li
+									a(href="") Один
+								li
+									a(href="") Два
+								li
+									a(href="") Три
+						li
+							a(href="#") Пациенты
+						li
+							a(href="#") Больницы
+						li
+							a(href="#") Риски
+						li
+							a(href="#") Анализы
+						li
+							a(href="#") Полиморфизмы
+						li
+							a(href="#") Диагнозы
+						li
+							a(href="#") Геоположение
+						li
+							a(href="#") Ед. измерения
+						li
+							a(href="#") Периоды
+						li
+							a(href="#") Пользователи
+						li
+							a(href="#") Пациенты
+						li
+							a(href="#") Больницы
+						li
+							a(href="#") Риски
+						li
+							a(href="#") Анализы
+						li
+							a(href="#") Полиморфизмы
+						li
+							a(href="#") Диагнозы
+						li
+							a(href="#") Геоположение
+						li
+							a(href="#") Ед. измерения
+						li.sublist
+							a Периоды
+							ul
+								li
+									a(href="") Один
+								li
+									a(href="") Два
+								li
+									a(href="") Три
+			.sidebar__show(hidden).active
+				.picture
+					img(src="images/open-bar.svg" alt="")
+
+			.content-wrapper
+				//- tabs
+				.tabs
+					//- tabs__caption
+					ul.content-wrapper__nav.tabs__caption
+						.content-wrapper__nav-inner
+							span Показать записей
+							select
+								option 50
+								option 50
+								option 50
+
+						//- tabs_content
+						.content-wrapper__select
+							button.main-button Добавить пациента
+					.content-wrapper__input
+						input(type="text" placeholder="Иванов")
+					.table-wrapper.table-pacients.table-analyzes.tabs__content.active
+						table
+							thead
+								tr
+									th ФИО
+									th Анализ
+									th Дата сдачи анализа
+									th Начало тестирования
+									th Окончание тестирования
+									th Операции
+							tr
+								th.mode Иванова Ивана С.
+								th ОАМ
+								th 13.05.2020
+								th 13
+								th 13
+								th.table-wrapper__operation-icons
+									span
+										a(href="history.html")
+											img(src="images/operation-icon-1.svg" alt="")
+									span
+										a(href="")
+											img(src="images/operation-icon-2.svg" alt="")
+									span.mode Создать результат
+							tr
+								th.mode.mode--2 Иванова Ивана С.
+								th ОАМ
+								th 13.05.2020
+								th 13
+								th 13
+								th.table-wrapper__operation-icons
+									span
+										a(href="history.html")
+											img(src="images/operation-icon-1.svg" alt="")
+									span
+										a(href="")
+											img(src="images/operation-icon-2.svg" alt="")
+									span.mode Создать результат
+							tr
+								th.check Иванова Ивана С.
+								th ОАМ
+								th 13.05.2020
+								th 13
+								th 13
+								th.table-wrapper__operation-icons
+									span
+										a(href="history.html")
+											img(src="images/operation-icon-1.svg" alt="")
+									span
+										a(href="")
+											img(src="images/operation-icon-2.svg" alt="")
+									span.mode Создать результат
+							tr
+								th.check Иванова Ивана С.
+								th ОАМ
+								th 13.05.2020
+								th 13
+								th 13
+								th.table-wrapper__operation-icons
+									span
+										a(href="history.html")
+											img(src="images/operation-icon-1.svg" alt="")
+									span
+										a(href="")
+											img(src="images/operation-icon-2.svg" alt="")
+									span.mode Создать результат
+							tr
+								th.check Иванова Ивана С.
+								th ОАМ
+								th 13.05.2020
+								th 13
+								th 13
+								th.table-wrapper__operation-icons
+									span
+										a(href="history.html")
+											img(src="images/operation-icon-1.svg" alt="")
+									span
+										a(href="")
+											img(src="images/operation-icon-2.svg" alt="")
+									span.mode Создать результат
+
+
+
+				include modules/pagination.pug
+
+		script(src="js/jquery-3.4.1.min.js")
+		script(src="js/datepicker.min.js")
+
+		script(src="js/main.js")

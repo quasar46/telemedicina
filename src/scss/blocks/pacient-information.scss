@@ -1,0 +1,51 @@
+.pacient-information__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .item {
+        width: calc(50% - 20px);
+        background-color: #fff;
+        box-shadow: 0px 5px 20px rgba(211, 223, 236, 0.42);
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        img {
+            width: 100%;
+        }
+
+        h3 {
+            font-style: 24px;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}
+
+.pacient-information__content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    p {
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    a.read-more {
+        border: 1px solid #90b34f;
+        border-radius: 6px;
+        color: $color-green;
+        background-color: #fff;
+        padding: 0 40px;
+        line-height: 48px;
+        align-self: flex-start;
+        margin-top: auto;
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        padding: 30px;
+    }
+}

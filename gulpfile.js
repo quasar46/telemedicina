@@ -18,7 +18,7 @@ var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify-es').default;
 
 gulp.task("pug", function () {
-    return gulp.src("src/pug/pages/*.pug")
+    return gulp.src("src/pug/*.pug")
         .pipe(pug())
         .pipe(gulp.dest("build"));
 })
@@ -60,7 +60,7 @@ gulp.task("html", function () {
 gulp.task("js", function () {
     return gulp.src("src/js/*.js")
         .pipe(sourcemaps.init())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(sourcemaps.write())
         // .pipe(rename("main.min.js"))
         .pipe(gulp.dest("build/js"));
@@ -68,56 +68,29 @@ gulp.task("js", function () {
 
 gulp.task("images", function () {
     console.log(imagemin);
-    return gulp.src("src/images/*.*")
-        .pipe(imagemin([
-            imagemin.gifsicle({
-                interlaced: true
-            }),
-            imagemin.mozjpeg({
-                quality: 75,
-                progressive: true
-            }),
-            imagemin.optipng({
-                optimizationLevel: 5
-            }),
-            imagemin.svgo({
-                plugins: [{
-                    removeViewBox: true
-                },
-                {
-                    cleanupIDs: false
-                }
-                ]
-            })
-        ]))
+    return gulp.src("src/images/**/*.*")
+        // .pipe(imagemin([
+        //     imagemin.gifsicle({
+        //         interlaced: true
+        //     }),
+        //     imagemin.mozjpeg({
+        //         quality: 75,
+        //         progressive: true
+        //     }),
+        //     imagemin.optipng({
+        //         optimizationLevel: 5
+        //     }),
+        //     imagemin.svgo({
+        //         plugins: [{
+        //             removeViewBox: true
+        //         },
+        //         {
+        //             cleanupIDs: false
+        //         }
+        //         ]
+        //     })
+        // ]))
         .pipe(gulp.dest("build/images"));
-});
-
-gulp.task("img", function () {
-    console.log(imagemin);
-    return gulp.src("src/img/*.*")
-        .pipe(imagemin([
-            imagemin.gifsicle({
-                interlaced: true
-            }),
-            imagemin.mozjpeg({
-                quality: 75,
-                progressive: true
-            }),
-            imagemin.optipng({
-                optimizationLevel: 5
-            }),
-            imagemin.svgo({
-                plugins: [{
-                    removeViewBox: true
-                },
-                {
-                    cleanupIDs: false
-                }
-                ]
-            })
-        ]))
-        .pipe(gulp.dest("build/img"));
 });
 
 gulp.task('fonts', function () {
@@ -161,5 +134,5 @@ gulp.task("clean", function () {
     return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "css", "vendor", "pug", "js"));
+gulp.task("build", gulp.series("clean", "images", "css", "vendor", "pug", "js"));
 gulp.task("start", gulp.series("build", "server"));

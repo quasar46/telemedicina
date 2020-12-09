@@ -1,0 +1,47 @@
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		title title here
+		link(rel="stylesheet" href="css/datepicker.min.css")
+		link(rel="stylesheet" href="css/select2.min.css")
+		link(rel="stylesheet" href="css/main.min.css")
+	body
+		.authorization-main
+
+			.authorization__left
+				.authorization__left-inner
+					h2.title Вход
+					form(action="get")
+						.authorization__inputs
+							label(for="") 
+								span Телефон
+								input(type="text" value="+7")
+							label(for="") 
+								span Пароль
+								input(type="password")
+						.authorization__remember
+							input(type="checkbox" id="remember")
+							label(for="remember")
+								span Запомнить меня
+							span.recovery-pas Забыли пароль?
+						.authorization__btn
+							input.main-button(type="submit" value="Войти")
+					.authorization__registration
+						span Вы еще не зарегистрированы?
+						a(href="#") Зарегистрироваться
+
+			.authorization__right
+
+
+
+
+
+
+
+
+		script(src="js/jquery-3.4.1.min.js")
+		script(src="js/datepicker.min.js")
+		script(src="js/select2.min.js")
+		script(src="js/main.js")

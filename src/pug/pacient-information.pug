@@ -1,0 +1,83 @@
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        title title here
+        link(rel="stylesheet" href="css/main.min.css")
+        link(rel="stylesheet" href="css/datepicker.min.css")
+    body
+        main
+            .pacient-wrapper
+                //- pacient-aside
+                .pacient-aside
+                    //- logo
+                    .main-header__logo
+                        a(href="#")
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" width="6" height="25" fill="white"/>
+                                <rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+                            </svg>
+                            span Медицина
+                    .pacient-aside__info
+                        .pacient-aside__picture
+                            img(src="" alt="")
+                        .pacient-aside__name
+                            span Иванова М.С.
+                    nav.pacient-aside__nav
+                        ul
+                            li
+                                a(href="pacient-main.html") Главная
+                            li
+                                a(href="pacient-appaintment.html") Назначение
+                            li
+                                a(href="pacient-examination.html") Обследование
+                            li
+                                a(href="pacient-forum.html") Форум
+                            li
+                                a(href="pacient-calendar.html") Календарь
+                            li.active
+                                a Информация
+                .pacient-forum__inner
+                    .pacient-content
+                        .pacient-content__header
+                            .pacient-content__header-col
+                                .pacient-content__title-name Информация
+                        .pacient-information
+                            ul.pacient-information__list
+                                li.item
+                                    .picture
+                                        img(src="images/information/item1.png" alt="")
+                                    .pacient-information__content
+                                        h3 Сумка в роддом
+                                        p Документы (паспорт + копия, мед.полис + копия, свидетельство пенсионного страхования + копия, обменная карта, контракт с роддомом).
+                                        a.read-more Читать
+                                li.item
+                                    .picture
+                                        img(src="images/information/item1.png" alt="")
+                                    .pacient-information__content
+                                        h3 Сумка в роддом
+                                        p Документы (паспорт + копия, мед.полис + копия, свидетельство пенсионного страхования + копия, обменная карта, контракт с роддомом).
+                                        a.read-more Читать
+                                li.item
+                                    .picture
+                                        img(src="images/information/item1.png" alt="")
+                                    .pacient-information__content
+                                        h3 Сумка в роддом
+                                        p Документы (паспорт + копия, мед.полис + копия, свидетельство пенсионного страхования + копия, обменная карта, контракт с роддомом).
+                                        a.read-more Читать
+                                li.item
+                                    .picture
+                                        img(src="images/information/item1.png" alt="")
+                                    .pacient-information__content
+                                        h3 Сумка в роддом
+                                        p Документы (паспорт + копия, мед.полис + копия, свидетельство пенсионного страхования + копия, обменная карта, контракт с роддомом).
+                                        a.read-more Читать
+
+
+
+
+                include modules/pacient-footer.pug
+    script(src="js/jquery-3.4.1.min.js")
+    script(src="js/datepicker.min.js")
+    script(src="js/main.js")

@@ -1,0 +1,9 @@
+.pacient-wrapper {
+    display: flex;
+    width: 100%;
+    flex: auto;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}

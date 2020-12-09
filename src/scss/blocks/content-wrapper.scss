@@ -1,9 +1,15 @@
 .content-wrapper {
     padding: 60px;
     margin-top: 72px;
-    margin-left: 220px;
-    background-color: #FAFBFC;
-    opacity:0.9;
+    margin-left: 250px;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    height: 100vh;
+    @media (max-width: 1023px) {
+        margin-left: 0;
+    }
 }
 
 .content-wrapper__top {
@@ -31,39 +37,40 @@
 
 .content-wrapper__nav {
     display: flex;
+    align-items: center;
+    margin-bottom: 40px;
     li {
-        a {
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #333;
-            position: relative;
-            border-bottom: 4px solid transparent;
-            &.active {
-                font-weight: 700;
-            }
-            &:hover,
-            &:focus,
-            &.active {
-                border-bottom: 4px solid #047df6;
-                transition: 0.3s;
+        cursor: pointer;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        border-bottom: 4px solid transparent;
+        &.active {
+            font-weight: 700;
+        }
+        &:hover,
+        &.active {
+            border-bottom: 4px solid #047df6;
+            transition: 0.3s;
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    margin-top: -4px;
-                    background-color: #e81717;
-                    border-radius: 50%;
-                    width: 8px;
-                    height: 8px;
-                }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -4px;
+                background-color: #e81717;
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
             }
         }
     }
 }
 
 .content-wrapper__select {
+    margin-left: auto;
     select {
         border: none;
         appearance: none;
@@ -73,5 +80,34 @@
         background-size: 13px 7px;
         background-position: 99% center;
         outline: none;
+    }
+}
+
+.content-wrapper__nav-inner {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #454545;
+    }
+    .text {
+        margin-right: 20px;
+    }
+    span.select2 {
+        margin-left: 20px;
+    }
+}
+
+.content-wrapper__input {
+    margin-bottom: 40px;
+    input {
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid #1b87f4;
+        max-width: 500px;
+        width: 100%;
+        padding: 10px;
     }
 }

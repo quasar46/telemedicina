@@ -1,0 +1,85 @@
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        title title here
+        link(rel="stylesheet" href="css/main.min.css")
+        link(rel="stylesheet" href="css/datepicker.min.css")
+    body
+        main
+            .pacient-wrapper
+                //- pacient-aside
+                .pacient-aside
+                    //- logo
+                    .main-header__logo
+                        a(href="#")
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" width="6" height="25" fill="white"/>
+                                <rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+                            </svg>
+                            span Медицина
+                    .pacient-aside__info
+                        .pacient-aside__picture
+                            img(src="" alt="")
+                        .pacient-aside__name
+                            span Иванова М.С.
+                    nav.pacient-aside__nav
+                        ul
+                            li
+                                a(href="pacient-main.html") Главная
+                            li
+                                a(href="pacient-appaintment.html") Назначение
+                            li
+                                a(href="pacient-examination.html") Обследование
+                            li.active
+                                a Форум
+                            li
+                                a(href="pacient-calendar.html") Календарь
+                            li
+                                a(href="pacient-information.html") Информация
+                .pacient-forum__inner
+                    .pacient-content
+                        .pacient-content__header
+                            .pacient-content__header-col
+                                .pacient-content__title-name Форум
+                        .pacient-forum
+                            .pacient-forum__message-wrapper.pacient-forum__message-wrapper-doctor
+                                .pacient-forum__message.pacient-forum__message--doctor
+                                    .pacient-forum__time 12:40
+                                    .pacient-forum__picture
+                                    .pacient-forum__content
+                                        h3 Башкирева В.
+                                        p Здравствуйте. Как вы себя чувтвуете?
+                            .pacient-forum__message-wrapper.pacient-forum__message-wrapper-pacient
+                                .pacient-forum__message.pacient-forum__message--pacient
+                                    .pacient-forum__time 12:41
+                                    .pacient-forum__picture
+                                    .pacient-forum__content
+                                        h3 Иванова М.
+                                        p Здравствуйте. Хорошо
+                            .pacient-forum__message-wrapper.pacient-forum__message-wrapper-doctor
+                                .pacient-forum__message.pacient-forum__message--doctor
+                                    .pacient-forum__time 12:40
+                                    .pacient-forum__picture
+                                    .pacient-forum__content
+                                        h3 Башкирева В.
+                                        p Здравствуйте. Как вы себя чувтвуете?
+                            .pacient-forum__message-wrapper.pacient-forum__message-wrapper-pacient
+                                .pacient-forum__message.pacient-forum__message--pacient
+                                    .pacient-forum__time 12:41
+                                    .pacient-forum__picture
+                                    .pacient-forum__content
+                                        h3 Иванова М.
+                                        p Здравствуйте. Хорошо
+                    .pacient-new-message
+                        form(action="get")
+                            input(type="text" placeholder="Написать сообщение...")
+                            input(type="submit")
+
+
+
+                include modules/pacient-footer.pug
+    script(src="js/jquery-3.4.1.min.js")
+    script(src="js/datepicker.min.js")
+    script(src="js/main.js")

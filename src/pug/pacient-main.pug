@@ -1,0 +1,150 @@
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        title title here
+        link(rel="stylesheet" href="css/main.min.css")
+        link(rel="stylesheet" href="css/datepicker.min.css")
+    body
+        main
+            .pacient-wrapper
+                //- pacient-aside
+                .pacient-aside
+                    //- logo
+                    .main-header__logo
+                        a(href="#")
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" width="6" height="25" fill="white"/>
+                                <rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+                            </svg>
+                            span Медицина
+                    .pacient-aside__info
+                        .pacient-aside__picture
+                            img(src="" alt="")
+                        .pacient-aside__name
+                            span Иванова М.С.
+                    nav.pacient-aside__nav
+                        ul
+                            li.active
+                                a Главная
+                            li
+                                a(href="pacient-appaintment.html") Назначение
+                            li
+                                a(href="pacient-examination.html") Обследование
+                            li
+                                a(href="pacient-forum.html") Форум
+                            li
+                                a(href="pacient-calendar.html") Календарь
+                            li
+                                a(href="pacient-information.html") Информация
+                .pacient-content
+                    .pacient-content__header
+                        .pacient-content__header-col
+                            .pacient-content__title-name Иванова М.С.
+                            .pacient-content__title-label Предпологаемая дата родов
+                            .pacient-content__title-date 1-15 августа 2020
+                        .pacient-content__header-col
+                            a.main-button.main-button--green.js-open-modal(data-modal="2") Заявка на консультацию
+
+                    .pacient-content__inner
+                        .element-grid.pacient-content__recomendation
+                            .pacient-content__header
+                                .pacient-content__col
+                                    h3
+                                        b C 30.04.2020
+                                        span Вам рекомендовано:
+                                .pacient-content__col
+                                    a(href="") Справка
+                            ul
+                                li
+                                    p Лечение оставить без изменений
+                                li
+                                    span сдать анализы
+                                    p  Через 2 недели повторно определить уровень антител к β2-гликопротеину
+                                li
+                                    span консультации
+                                    p осмотр гематолога
+                            .pacient-content__name-doctor Врач - Иванов И.И.
+
+                        .element-grid.pacient-content__notification
+                            h3 Уведомление
+                            p Сдать анализ общий анализ крови до 9 мая 2020 года
+                        .element-grid.pacient-content-description.pacient-content-description--first
+                            .pacient-content-description__picture
+                                img(src="images/item-description1.svg" alt="")
+                            .pacient-content-description__col
+                                p Недель
+                                span 1-4
+                        .element-grid.pacient-content-description.pacient-content-description--second
+                            .pacient-content-description__edit
+                            .pacient-content-description__picture
+                                img(src="images/item-description2.svg" alt="")
+                            .pacient-content-description__col
+                                p Вес
+                                span 70
+                        .element-grid.pacient-content-date
+                            .datepicker-cal
+                                .pacient-content-date__footer
+                                    .pacient-content-date__footer-col
+                                        span день обследования
+                                    .pacient-content-date__footer-col
+                                        span сегодняшний день
+                        .element-grid.pacient-content-bag
+                            .pacient-content-bag__picture
+                                picture
+                                    source(srcset="images/bag.png" media="(max-width: 768px)")
+                                    img(src="images/bag-desctop.png" alt="")
+                            h3 Сумка в роддом
+                            p Документы (паспорт + копия, мед.полис + копия, свидетельство пенсионного страхования + копия, обменная карта, контракт с роддомом). 
+                            a.read-more(href="") Читать
+
+
+                include modules/pacient-footer.pug
+                //- modal
+                .modal-consultation.modal(data-modal="1")
+                    h3 Вы были на очной консультации у врача?
+                    form(action="get")
+                        ul
+                            li
+                                input#check-yes(type="checkbox")
+                                label(for="check-yes")
+                                    span Да
+                            li
+                                input#check-no(type="checkbox")
+                                label(for="check-no")
+                                    span Нет
+                            li
+                                label 
+                                    span Выберите дату
+                                input.js-datepicker(type="text")
+                            li
+                                label
+                                    span Выберите врача
+                                select
+                                    option Генеколог
+                                    option Генеколог
+                                    option Генеколог
+                            li.buttons
+                                input.js-modal-close(type="button" value="Отмена")
+                                input(type="submit" value="Готово")
+                //- modal
+                .modal-consultation.modal(data-modal="2")
+                    h3 Заявка на невплановую консультацию
+                    form(action="get")
+                        ul
+                            li
+                                label(for="") 
+                                    span Напишите причинау обращения
+                                input(type="text" placeholder="Кровотечение")
+                            hr
+                            li.buttons
+                                input.js-modal-close(type="button" value="Отмена")
+                                input(type="submit" value="Готово")
+                //- overlay
+                .overlay.js-overlay-modal
+
+
+        script(src="js/jquery-3.4.1.min.js")
+        script(src="js/datepicker.min.js")
+        script(src="js/main.js")

@@ -1,0 +1,136 @@
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        title title here
+        link(rel="stylesheet" href="css/select2.min.css")
+        link(rel="stylesheet" href="css/main.min.css")
+        link(rel="stylesheet" href="css/datepicker.min.css")
+    body
+        header.main-header.main-header--admin
+            .main-header__logo
+                a(href="#")
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" width="6" height="25" fill="white"/>
+                        <rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+                    </svg>
+                    span Медицина
+            nav.main-nav
+                ul.main-nav__list
+                    li
+                        a(href="#") Сдача анализов
+                    li
+                        a(href="#") Результаты анализов
+                .main-nav__search
+                    input(type="text" name="search" placeholder="Search for a mail")
+                .main-nav__avatar.avatar
+                    .avatar__name
+                        span.avatar__title Иванович М.С.
+                        span.avatar__subtitle Врач-терапевт
+                    .avatar__picture
+                        img(src="" alt="")
+        main
+            aside.sidebar.sidebar--admin
+                .sidebar__nav
+                    ul.sidebar__list
+                        li
+                            a.active Пользователи
+                        li
+                            a(href="adm-pacients.html") Пациенты
+                        li
+                            a(href="#") Больницы
+                        li
+                            a(href="#") Риски
+                        li
+                            a(href="#") Анализы
+                        li
+                            a(href="#") Полиморфизмы
+                        li
+                            a(href="#") Диагнозы
+                        li
+                            a(href="#") Геоположение
+                        li
+                            a(href="#") Ед. измерения
+                        li
+                            a(href="#") Периоды
+                        li
+                            a.active Пользователи
+                        li
+                            a(href="adm-pacients.html") Пациенты
+                        li
+                            a(href="#") Больницы
+                        li
+                            a(href="#") Риски
+                        li
+                            a(href="#") Анализы
+                        li
+                            a(href="#") Полиморфизмы
+                        li
+                            a(href="#") Диагнозы
+                        li
+                            a(href="#") Геоположение
+                        li
+                            a(href="#") Ед. измерения
+                        li
+                            a(href="#") Периоды
+            .sidebar__show(hidden).active
+                .picture
+                    img(src="images/open-bar.svg" alt="")
+
+            .content-wrapper
+                .content-wrapper__top
+                    ul
+                        li
+                            a(href="#").back-page Назад
+
+                .adm-users-edit
+                    h2 Новая роль
+                    ul
+                        li
+                            span.title Факторы риска
+                            input(type="text" value="12321313")
+                        li
+                            h3.title Данные анамнеза
+                            span.title Замечания
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check1")
+                                label(for="check1") Длительный прием антикоагулянтов, используемый до беременности для постоянных показаний
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check2")
+                                label(for="check2") Предшествующие рецидивирующие ВТЭО 
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check3")
+                                label(for="check3") Предшествующее ВТЭО в сочетании с тромбофилией высокого риска (дефицит антитромбина, АФС ), без лечения антикоагулянтами до беременности
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check4")
+                                label(for="check4") Предшествующие ВТЭО, ничем не спровоцированные или связанные с приемом эстрогенов или  беременностью
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check5")
+                                label(for="check5") Предшествующие спровоцированные ВТЭО в сочетании с тромбофилией низкого риска
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check6")
+                                label(for="check6") Бессимптомные тромбофилии омозиготы по фактору V Лейдена 
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check7")
+                                label(for="check7") Гомозиготы по протромбину G20210A 
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check8")
+                                label(for="check8") Дефицит антитромбина 
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check9")
+                                label(for="check9") Строгий постельный режим 7 и более дней у женщин с ИМТ >25 кг/м2 
+                            .check-row
+                                input(type="checkbox" value="Админ" name="remarks" id="check10")
+                                label(for="check10") Неакушерское хирургическое вмешательство во время беременности 
+
+
+
+                    buttons
+                        button.btn.btn--mode Сохранить
+                        button.btn Удалить
+
+        script(src="js/jquery-3.4.1.min.js")
+        script(src="js/datepicker.min.js")
+        script(src="js/select2.min.js")
+        script(src="js/main.js")

@@ -1,0 +1,33 @@
+.pagination {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 80px;
+    margin-bottom: 50px;
+    a.item {
+        font-size: 16px;
+        font-weight: 500;
+        float: left;
+        text-decoration: none;
+        color: #333333;
+        padding: 10px 16px;
+        margin-right: 14px;
+        border: 1px solid #ececec;
+        border-radius: 6px;
+        background-color: #fff;
+        &:hover,
+        &.active {
+            background-color: #ececec;
+        }
+    }
+    span.item {
+        font-size: 16px;
+        font-weight: 500;
+        float: left;
+        text-decoration: none;
+        color: #333333;
+        padding: 10px 16px;
+        margin-right: 14px;
+        background-color: #fff;
+      
+    }
+}

@@ -1,0 +1,35 @@
+.authorization-main {
+	display: flex;
+	justify-content: space-between;
+	height: 100vh;
+	& > div {
+		width: 50%;
+	}
+}
+
+.authorization__left {
+	position: relative;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.authorization__right {
+	align-items: center;
+	background-color: #1b87f4;
+	background-image: url("../images/authorization-bg.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 599px auto;
+}
+
+.authorization__left-inner {
+	h2 {
+		margin-bottom: 50px;
+	}
+	max-width: 490px;
+	width: 100%;
+	form {
+		margin-bottom: 40px;
+	}
+}

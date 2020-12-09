@@ -15,6 +15,10 @@ body {
 	line-height: 1.2;
 }
 
+body {
+	height: 100%;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -44,6 +48,15 @@ li {
 }
 
 main {
+	// background-color: #fafbfc;
+	// background-color: #000;
 	display: flex;
-	background-color: #fafbfc;
+	flex-direction: column;
+	height: 100%;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: block;
 }

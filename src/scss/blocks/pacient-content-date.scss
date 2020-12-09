@@ -1,0 +1,87 @@
+.pacient-content-date {
+    position: relative;
+    grid-area: element-grid5;
+    padding-bottom: 150px;
+    .datepicker {
+        width: 100%;
+        border: none;
+    }
+    .datepicker-cal,
+    .datepicker-inline,
+    .datepicker,
+    .datepicker--content,
+    .datepicker--days,
+    .datepicker--cells {
+        height: 100%;
+    }
+    .datepicker--cell-day {
+        height: auto;
+    }
+    .datepicker--nav-title,
+    .datepicker--nav-title i {
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: $font-mont;
+    }
+    .datepicker--cell.datepicker--cell-day.-focus- {
+        background-color: $color-green;
+    }
+    .datepicker--cell.-current- {
+        border-radius: 50%;
+        background-color: $color-green;
+        color: #fff;
+    }
+    .datepicker--cells {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .datepicker--cell-day {
+        width: calc(100% / 7);
+        color: #333;
+        font-size: 14px;
+    }
+    .datepicker--day-name {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.pacient-content-date__footer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 0;
+    padding-right: 30px;
+    span {
+        padding-left: 30px;
+        position: relative;
+        margin-left: 30px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 21px;
+            height: 21px;
+            border-radius: 50%;
+        }
+    }
+}
+.pacient-content-date__footer-col {
+    display: flex;
+}
+.pacient-content-date__footer-col:nth-child(1) {
+    span::before {
+        border: 1px solid #ffb800;
+    }
+}
+.pacient-content-date__footer-col:nth-child(2) {
+    span::before {
+        border: 1px solid $color-green;
+        background-color: $color-green;
+    }
+}

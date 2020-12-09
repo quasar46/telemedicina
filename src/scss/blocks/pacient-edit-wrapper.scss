@@ -1,0 +1,35 @@
+.pacient-edit-wrapper {
+	.popup__wrapper {
+		h2 {
+			margin-bottom: 0;
+			cursor: pointer;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				transform: rotate(180deg);
+				background-repeat: no-repeat;
+				width: 20px;
+				height: 12px;
+				margin-top: -6px;
+				right: 0;
+				top: 50%;
+			}
+			&::after {
+				background-image: url(../images/arrow-acc.svg);
+				transition: all 0.1s;
+			}
+		}
+		form {
+			margin-top: 50px;
+		}
+		position: relative;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		width: auto;
+		margin-bottom: 10px;
+		padding: 40px;
+	}
+}

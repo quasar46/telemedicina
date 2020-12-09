@@ -1,0 +1,55 @@
+.pacient-footer {
+    display: none;
+    background-color: #fff;
+    padding: 16px;
+    height: 73px;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+    }
+    li {
+        width: calc(100% / 5);
+        width: 39px;
+        display: flex;
+    }
+    @media (max-width: 768px) {
+        display: block;
+        margin-top: auto;
+    }
+}
+
+.pacient-footer__link {
+    width: 100%;
+    background-repeat: no-repeat;
+    &--home {
+        background-image: url("../images/icon-footer/home.svg");
+        &.active {
+            background-image: url("../images/icon-footer/home-hover.svg");
+        }
+    }
+    &--document {
+        background-image: url("../images/icon-footer/document.svg");
+        &.active {
+            background-image: url("../images/icon-footer/document-hover.svg");
+        }
+    }
+    &--chat {
+        background-image: url("../images/icon-footer/chat.svg");
+        &.active {
+            background-image: url("../images/icon-footer/chat-hover.svg");
+        }
+    }
+    &--calendar {
+        background-image: url("../images/icon-footer/calendar.svg");
+        &.active {
+            background-image: url("../images/icon-footer/calendar-hover.svg");
+        }
+    }
+    &--title {
+        background-image: url("../images/icon-footer/title.svg");
+        &:hover {
+            background-image: url("../images/icon-footer/title-hover.svg");
+        }
+    }
+}

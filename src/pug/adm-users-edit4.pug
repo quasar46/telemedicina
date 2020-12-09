@@ -1,0 +1,156 @@
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        title title here
+        link(rel="stylesheet" href="css/select2.min.css")
+        link(rel="stylesheet" href="css/main.min.css")
+        link(rel="stylesheet" href="css/datepicker.min.css")
+    body
+        header.main-header.main-header--admin
+            .main-header__logo
+                a(href="#")
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" width="6" height="25" fill="white"/>
+                        <rect y="15" width="6" height="25" transform="rotate(-90 0 15)" fill="white"/>
+                    </svg>
+                    span Медицина
+            nav.main-nav
+                ul.main-nav__list
+                    li
+                        a(href="#") Сдача анализов
+                    li
+                        a(href="#") Результаты анализов
+                .main-nav__search
+                    input(type="text" name="search" placeholder="Search for a mail")
+                .main-nav__avatar.avatar
+                    .avatar__name
+                        span.avatar__title Иванович М.С.
+                        span.avatar__subtitle Врач-терапевт
+                    .avatar__picture
+                        img(src="" alt="")
+        main
+            aside.sidebar.sidebar--admin
+                .sidebar__nav
+                    ul.sidebar__list
+                        li
+                            a.active Пользователи
+                        li
+                            a(href="adm-pacients.html") Пациенты
+                        li
+                            a(href="#") Больницы
+                        li
+                            a(href="#") Риски
+                        li
+                            a(href="#") Анализы
+                        li
+                            a(href="#") Полиморфизмы
+                        li
+                            a(href="#") Диагнозы
+                        li
+                            a(href="#") Геоположение
+                        li
+                            a(href="#") Ед. измерения
+                        li
+                            a(href="#") Периоды
+                        li
+                            a.active Пользователи
+                        li
+                            a(href="adm-pacients.html") Пациенты
+                        li
+                            a(href="#") Больницы
+                        li
+                            a(href="#") Риски
+                        li
+                            a(href="#") Анализы
+                        li
+                            a(href="#") Полиморфизмы
+                        li
+                            a(href="#") Диагнозы
+                        li
+                            a(href="#") Геоположение
+                        li
+                            a(href="#") Ед. измерения
+                        li
+                            a(href="#") Периоды
+            .sidebar__show(hidden).active
+                .picture
+                    img(src="images/open-bar.svg" alt="")
+
+            .content-wrapper
+                .content-wrapper__top
+                    ul
+                        li
+                            a(href="#").back-page Назад
+
+                .adm-users-edit
+                    h2 Новое референтное значение
+                    ul
+                        li
+                            span.title Фильт группы анализов
+                            select.js-example-basic-single
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                        li
+                            span.title Анализ
+                            select.js-example-basic-single
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                        li
+                            span.title Период
+                            select.js-example-basic-single
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                        li
+                            span.title Минимальное значение
+                            select.js-example-basic-single
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                        li
+                            span.title Максимальное значение
+                            select.js-example-basic-single
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                                option(value="") Выберите группу анадизов
+                        li.checks
+                            span.title Включено
+                            input(type="radio" id="check1" name="name" value="value1")
+                            label(for="check1") Да
+                            input(type="radio" id="check2" name="name" value="value2")
+                            label(for="check2") Нет
+                    .buttons
+                        button.btn.btn--mode Сохранить
+                        button.btn Редактировать
+
+                    .buttons
+                        button.btn.btn--delete Удалить
+                        button.btn.btn--edit Редактировать
+                    .buttons
+                        button.btn.btn--add.btn--show Добавить
+                            ul.sublist
+                                li.sublist__item 
+                                    a(href="") Запись в историю болезни
+                                li.sublist__item 
+                                    a(href="") Обследование
+                                li.sublist__item 
+                                    a(href="") Запись в историю болезни
+                        button.btn.btn--list.btn--show Список
+                            ul.sublist
+                                li.sublist__item 
+                                    a(href="") один
+                                li.sublist__item 
+                                    a(href="") два
+                                li.sublist__item 
+                                    a(href="") три
+                                li.sublist__item 
+                                    a(href="") четыре
+
+        script(src="js/jquery-3.4.1.min.js")
+        script(src="js/datepicker.min.js")
+        script(src="js/select2.min.js")
+        script(src="js/main.js")
