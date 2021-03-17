@@ -67,7 +67,6 @@
         }
     }
     .sublist {
-        // pointer-events: none;
         cursor: pointer;
         ul {
             display: none;
@@ -82,4 +81,11 @@
     @media (max-width: 1023px) {
         // display: none;
     }
+}
+
+.sidebar__sublist {
+    // правки
+    margin-top: 0;
+    margin-bottom: 0;
+    // правки
 }

@@ -47,6 +47,19 @@
 
 .statement__content {
     display: flex;
+    border-bottom:1px solid #ccc;
+    &--big {
+        padding-top: 50px;
+        .statement__info {
+            width: 100%;
+        }
+        .statement__info-block {
+            max-width: 100%;
+        }
+    }
+    &:last-child {
+        border-bottom: 0;
+    }
 }
 
 .statement__info {
