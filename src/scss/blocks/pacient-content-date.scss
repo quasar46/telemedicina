@@ -1,21 +1,14 @@
 .pacient-content-date {
     position: relative;
-    grid-area: element-grid5;
-    padding-bottom: 150px;
+    grid-area: element-grid6;
+    // padding-bottom: 150px;
+    padding-bottom: 100px;
     .datepicker {
-        width: 100%;
+        // width: 100%;
         border: none;
     }
-    .datepicker-cal,
-    .datepicker-inline,
-    .datepicker,
-    .datepicker--content,
-    .datepicker--days,
-    .datepicker--cells {
-        height: 100%;
-    }
     .datepicker--cell-day {
-        height: auto;
+        // height: auto;
     }
     .datepicker--nav-title,
     .datepicker--nav-title i {
@@ -28,9 +21,26 @@
         background-color: $color-green;
     }
     .datepicker--cell.-current- {
-        border-radius: 50%;
-        background-color: $color-green;
+        position: relative;
         color: #fff;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: $color-green;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+    }
+    .datepicker--cell.-exam- {
+        border-radius: 50%;
+        border: 1px solid #ffb800;
+        color: inherit;
     }
     .datepicker--cells {
         display: flex;
@@ -45,6 +55,8 @@
         font-size: 14px;
         color: rgba(0, 0, 0, 0.6);
     }
+    @media (max-width: 600px) {
+    }
 }
 
 .pacient-content-date__footer {
@@ -56,10 +68,11 @@
     width: 100%;
     padding: 40px 0;
     padding-right: 30px;
+    padding-bottom: 20px;
     span {
         padding-left: 30px;
         position: relative;
-        margin-left: 30px;
+        margin-left: 10px;
         &::before {
             content: "";
             position: absolute;
@@ -70,9 +83,18 @@
             border-radius: 50%;
         }
     }
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 }
 .pacient-content-date__footer-col {
     display: flex;
+    @media (max-width: 600px) {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 .pacient-content-date__footer-col:nth-child(1) {
     span::before {

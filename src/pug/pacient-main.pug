@@ -34,6 +34,9 @@ html(lang="ru-RU")
                                 a(href="pacient-calendar.html") Календарь
                             li
                                 a(href="pacient-information.html") Информация
+                .sidebar__show.sidebar__show--green.active
+                    .picture 
+                        img(src="images/open-bar.svg" alt="")
                 .pacient-content
                     .pacient-content__header
                         .pacient-content__header-col
@@ -79,6 +82,13 @@ html(lang="ru-RU")
                             .pacient-content-description__col
                                 p Вес
                                 span 70
+                        .element-grid.pacient-content-description.pacient-content-description--three
+                            .pacient-content-description__edit
+                            .pacient-content-description__picture
+                                img(src="images/item-description2.svg" alt="")
+                            .pacient-content-description__col
+                                p Вес
+                                span 70
                         .element-grid.pacient-content-date
                             .datepicker-cal
                                 .pacient-content-date__footer
@@ -88,12 +98,13 @@ html(lang="ru-RU")
                                         span сегодняшний день
                         .element-grid.pacient-content-bag
                             .pacient-content-bag__picture
-                                picture
+                                .picture
                                     source(srcset="images/bag.png" media="(max-width: 768px)")
                                     img(src="images/bag-desctop.png" alt="")
-                            h3 Сумка в роддом
-                            p Документы (паспорт + копия, мед.полис + копия, свидетельство пенсионного страхования + копия, обменная карта, контракт с роддомом). 
-                            a.read-more(href="") Читать
+                            .pacient-content-bag__footer
+                                h3 Сумка в роддом
+                                p Документы (паспорт + копия, мед.полис + копия, свидетельство пенсионного страхования + копия, обменная карта, контракт с роддомом). 
+                                a.read-more(href="") Читать
 
 
                 include modules/pacient-footer.pug

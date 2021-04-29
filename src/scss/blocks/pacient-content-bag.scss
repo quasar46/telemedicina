@@ -4,8 +4,9 @@
     box-shadow: 0px 5px 20px rgba(211, 223, 236, 0.42);
     padding: 24px 40px;
     display: flex;
-    flex-direction: column;
-    grid-area: element-grid6;
+    justify-content: space-between;
+    // flex-direction: column;
+    grid-area: element-grid7;
     h3 {
         font-size: 24px;
         font-weight: 700;
@@ -37,10 +38,17 @@
             font-size: 14px;
         }
     }
+    @media(max-width: 1365px) {
+        flex-direction: column;
+    }
     @media (max-width: 768px) {
         padding: 0;
         padding-bottom: 40px;
     }
+}
+
+.pacient-content-bag__footer {
+    flex: 0 1 50%;
 }
 
 .pacient-content-bag__picture {

@@ -1,37 +1,90 @@
-var acc = document.getElementsByClassName("accordion");
-var i;
+$(document).ready(function () {
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
+    const accordion = function () {
+        let acc = document.getElementsByClassName("accordion");
+        let i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
         }
-    });
-}
+    }
+    accordion();
 
-// inicial select
-$(document).ready(function () {
     $('.js-example-basic-single').select2();
-});
 
-
-
-// tabsА
-$(document).ready(function () {
+    // tabsА
     $('ul.tabs__caption').on('click', 'li:not(.active)', function () {
         $(this)
             .addClass('active').siblings().removeClass('active')
             .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
     });
-});
 
+    let logDate = ['2021/04/20', '2021/04/25']
 
-$('.datepicker-cal').datepicker([
-])
+    // calendar
+    $('.datepicker-cal').datepicker({
+        onRenderCell: function (date, cellType) {
+            if (cellType == 'day' && logDate.includes(moment(date).format('YYYY/MM/DD'))) {
+                return {
+                    classes: 'exam',
+                }
+            }
+        }
+    })
+
+    // popup
+    $('#btn-add-pacient').on('click', function () {
+        $('#profile-popup').addClass('active');
+    })
+    $('#btn-next1').on('click', function () {
+        $('#profile-popup').removeClass('active');
+        $('#general-popup').addClass('active');
+    })
+    $('#btn-next2').on('click', function () {
+        $('#general-popup').removeClass('active');
+        $('#gestation-popup').addClass('active');
+    })
+    $('#btn-next3').on('click', function () {
+        $('#gestation-popup').removeClass('active');
+        $('#mutation-popup').addClass('active');
+    })
+    $('#btn-next4').on('click', function () {
+        $('#mutation-popup').removeClass('active');
+        $('#risk-popup').addClass('active');
+    })
+    $('#btn-next5').on('click', function () {
+        $('#risk-popup').removeClass('active');
+    })
+
+    // sublist
+    $('.sublist').on('click', function () {
+        console.log('adsadsad');
+        $(this).children('ul').slideToggle();
+    })
+
+    $('.btn--show').on('click', function () {
+        $(this).children('.sublist').toggle();
+    })
+
+    // show sidebar
+    $('.sidebar__show').on('click', function () {
+        $('.sidebar').toggleClass('active');
+    })
+
+    $('.sidebar__show--green').on('click', function () {
+        $('.pacient-aside').toggleClass('active');
+    })
+
+    $('.sidebar').removeClass('active');
+})
 
 document.addEventListener('DOMContentLoaded', function () {
     new Morris.Line({
@@ -57,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // modal 
-
 document.addEventListener('DOMContentLoaded', function () {
 
     /* Записываем в переменные массив элементов-кнопок и подложку.
@@ -92,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }); // end foreach
 
-
     closeButtons.forEach(function (item) {
 
         item.addEventListener('click', function (e) {
@@ -103,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     }); // end foreach
-
 
     document.body.addEventListener('keyup', function (e) {
         var key = e.keyCode;
@@ -120,55 +170,5 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.modal.active').classList.remove('active');
         this.classList.remove('active');
     });
+
 }); // end ready
-
-// popup
-$(document).ready(function () {
-    $('#btn-add-pacient').on('click', function () {
-        $('#profile-popup').addClass('active');
-    })
-    $('#btn-next1').on('click', function () {
-        $('#profile-popup').removeClass('active');
-        $('#general-popup').addClass('active');
-    })
-    $('#btn-next2').on('click', function () {
-        $('#general-popup').removeClass('active');
-        $('#gestation-popup').addClass('active');
-    })
-    $('#btn-next3').on('click', function () {
-        $('#gestation-popup').removeClass('active');
-        $('#mutation-popup').addClass('active');
-    })
-    $('#btn-next4').on('click', function () {
-        $('#mutation-popup').removeClass('active');
-        $('#risk-popup').addClass('active');
-    })
-    $('#btn-next5').on('click', function () {
-        $('#risk-popup').removeClass('active');
-    })
-})
-
-// sublist
-$(document).ready(function () {
-    $('.sublist').on('click', function () {
-        console.log('adsadsad');
-        $(this).children('ul').slideToggle();
-    })
-})
-
-$(document).ready(function () {
-    $('.btn--show').on('click', function () {
-        $(this).children('.sublist').toggle();
-    })
-})
-
-// show sidebar
-$(document).ready(function () {
-    $('.sidebar__show').on('click', function () {
-        $('.sidebar').toggleClass('active');
-    })
-})
-
-$(document).on('scroll', function () {
-    $('.sidebar').removeClass('active');
-})

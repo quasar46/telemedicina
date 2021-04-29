@@ -5,36 +5,45 @@
     background: #fffbf0;
     display: flex;
     flex-direction: column;
+    margin-left: 237px;
     &--mode {
         background-color: #fafbfc;
+    }
+    @media (max-width: 1023px) {
+        margin-left: 50px;
     }
     @media (max-width: 768px) {
         padding: 30px 15px;
         flex-grow: 1;
-        display:flex;
+        display: flex;
         flex-direction: column;
+        width: auto;
     }
 }
 
 .pacient-content__inner {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: minmax(140px, auto);
     grid-gap: 20px;
     margin-bottom: 37px;
     grid-template-areas:
         "element-grid1 element-grid1 element-grid1"
-        "element-grid2 element-grid3 element-grid4"
-        "element-grid5 element-grid6 element-grid6";
-    @media (max-width: 768px) {
-        // grid-template-columns: 1fr 1fr;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 100%));
+        "element-grid2 element-grid6 element-grid3"
+        "element-grid2 element-grid6 element-grid4"
+        "element-grid2 element-grid6 element-grid5"
+        "element-grid7 element-grid7 element-grid7";
+    @media (max-width: 1365px) {
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "element-grid1 element-grid1"
-            "element-grid2 element-grid2"
-            "element-grid3 element-grid4"
-            "element-grid5 element-grid5"
-            "element-grid6 element-grid6";
+            "element-grid2 element-grid3"
+            "element-grid4 element-grid5"
+            "element-grid6 element-grid7";
+    }
+    @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
