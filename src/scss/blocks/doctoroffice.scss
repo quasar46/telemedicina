@@ -1,25 +1,49 @@
-@import "~fancybox/dist/css/jquery.fancybox.css";
-
+/*
+    Регулировка отступа в медицинской
+    документации при просмотре истории
+    болезни пациента
+*/
 .statement__info-block p {
     margin-bottom: 5px;
 }
 
+/*
+   Используется на странице просмотра
+   истории болезни пациента в кабинете
+   врача на ссылках для внесения данных
+*/
 .statement__head a.back-page {
     text-decoration: none;
 }
 
-.sorting,.sorting_desc,.sorting_asc{
+/*
+    Не нашел, где используется
+*/
+.sorting,
+.sorting_desc,
+.sorting_asc {
     cursor: pointer;
 }
 
-.content-wrapper__top h1{
+/*
+    Используется, например,
+    на странице Список пациентов
+    для h1 заголовка
+*/
+.content-wrapper__top h1 {
     margin-bottom: 30px;
 }
 
-#datatable .dataTables_filter{
+/*
+    Скрывает поиск по умолчанию у плагина отображения таблиц
+*/
+#datatable .dataTables_filter {
     display: none;
 }
 
+/*
+    Вывод кол-во уведомлений в меню sidebar
+*/
 .notificationNumber {
     background-color: #fa3e3e;
     border-radius: 2px;
@@ -34,29 +58,24 @@
     height: 20px;
 }
 
-.notificationNumber {
-    background-color: #fa3e3e;
-    border-radius: 2px;
-    color: white;
-
-    padding: 1px 3px 1px 3px;
-    font-size: 16px;
-    margin-left: 15px;
-
-    display: flex;
-    align-self: center;
-    height: 20px;
-}
-/* Убирает баг в кабинете врача, чтобы меню не отодвигалась на полстраницы */
+/*
+    Убирает баг в кабинете врача, чтобы меню не отодвигалась на полстраницы
+*/
 .sidebar__sublist {
     margin-top: 0;
     margin-bottom: 0;
 }
-/* Делает линки в саблисте жирными */
+
+/*
+    Делает линки в саблисте жирными
+*/
 .sublist > a {
     font-weight: bold;
 }
 
+/*
+    НАЧАЛО - Выпадающая кнопка выйти в профиле врача
+*/
 .dropdown {
     margin-top: 15px;
     cursor: pointer;
@@ -78,7 +97,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #256ab1
+    background-color: #256ab1;
 }
 
 .dropdown:hover .dropdown-content {
@@ -89,6 +108,13 @@
     background-color: #3e8e41;
 }
 
+/*
+    КОНЕЦ - Выпадающая кнопка выйти в профиле врача
+*/
+
+/*
+    НАЧАЛО - Стили отображения строки поиска в main-nav
+*/
 .searchBox {
     width: 140px;
     cursor: pointer;
@@ -100,9 +126,25 @@
     outline: none;
 }
 
-@media only screen and (max-width: 1245px) {
+/*
+    КОНЕЦ - Стили отображения строки поиска в main-nav
+*/
+
+/*
+    Отвечает за скрытие роли авторизованного пользователя в main-nav
+*/
+a.document-link {
+    color: #3796f6;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+p.document-link {
+    padding-bottom: 20px;
+}
+
+@media (max-width: 1245px) {
     .avatar__subtitle {
         display: none;
     }
 }
-

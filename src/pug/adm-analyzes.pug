@@ -1,11 +1,7 @@
 doctype html
 html(lang="ru-RU")
 	head
-		meta(charset="utf-8")
-		meta(name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
-		title title here
-		link(rel="stylesheet" href="css/main.min.css")
-		link(rel="stylesheet" href="css/datepicker.min.css")
+		include modules/head.pug
 	body
 		header.main-header.main-header--admin
 			.main-header__logo
@@ -193,7 +189,4 @@ html(lang="ru-RU")
 
 				include modules/pagination.pug
 
-		script(src="js/jquery-3.4.1.min.js")
-		script(src="js/datepicker.min.js")
-
-		script(src="js/main.js")
+		include modules/script.pug
